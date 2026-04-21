@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nova — A premium AI chat assistant powered by Gemini. Get concise, well-structured answers to any question.">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="stylesheet" href="style.css">
+    <title>Nova — AI Assistant</title>
+</head>
+<body>
+    <div id="app">
+
+        <!-- ── Sticky Header ─────────────────────────────────────── -->
+        <header id="app-header">
+            <div class="header-inner">
+                <div class="header-brand">
+                    <div class="brand-icon">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </div>
+                    <h1>Nova</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat-btn" class="icon-btn" title="Clear chat" aria-label="Clear chat">
+                        <span class="material-symbols-outlined">delete_sweep</span>
+                    </button>
+                    <button id="export-chat-btn" class="icon-btn" title="Export chat" aria-label="Export chat">
+                        <span class="material-symbols-outlined">download</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── Chat Area ──────────────────────────────────────────── -->
+        <main id="chat-area">
+            <div class="chat-column">
+
+                <!-- Empty State -->
+                <div id="empty-state">
+                    <div class="empty-icon">
+                        <span class="material-symbols-outlined">auto_awesome</span>
+                    </div>
+                    <h2 class="empty-title">Nova</h2>
+                    <p class="empty-subtitle">A quiet spark in your curious night</p>
+
+                    <div class="suggestion-chips">
+                        <button class="chip" data-prompt="Design a cozy mountain cabin with large windows overlooking a pine forest">
+                            <span class="chip-icon material-symbols-outlined">palette</span>
+                            <span class="chip-text">Design a cozy mountain cabin</span>
+                        </button>
+                        <button class="chip" data-prompt="Give me 5 creative and budget-friendly ideas to decorate my room">
+                            <span class="chip-icon material-symbols-outlined">lightbulb</span>
+                            <span class="chip-text">Creative room decoration ideas</span>
+                        </button>
+                        <button class="chip" data-prompt="What are the best methods to debug JavaScript code? Include tools and techniques.">
+                            <span class="chip-icon material-symbols-outlined">bug_report</span>
+                            <span class="chip-text">Debug my JavaScript code</span>
+                        </button>
+                        <button class="chip" data-prompt="Write an optimized C++ function to check if a number is prime, with explanation">
+                            <span class="chip-icon material-symbols-outlined">code</span>
+                            <span class="chip-text">Prime number checker in C++</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages render here dynamically -->
+
+            </div>
+        </main>
+
+        <!-- ── Scroll-to-bottom FAB ───────────────────────────────── -->
+        <button id="scroll-bottom-btn" class="fab hidden" title="Scroll to bottom" aria-label="Scroll to bottom">
+            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+        </button>
+
+        <!-- ── Input Area ─────────────────────────────────────────── -->
+        <footer id="input-area">
+            <div class="input-column">
+                <!-- Image preview bar -->
+                <div id="image-preview-bar" class="hidden">
+                    <div id="image-preview-content">
+                        <img id="image-preview-thumb" src="" alt="Attached image">
+                        <span id="image-preview-name">image.jpg</span>
+                    </div>
+                    <button id="image-remove-btn" class="icon-btn-sm" title="Remove image" aria-label="Remove image">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+
+                <!-- Input row -->
+                <div id="input-wrapper">
+                    <input type="file" id="image-file-input" accept="image/png,image/jpeg,image/gif,image/webp" hidden>
+                    <button id="image-upload-btn" class="icon-btn" title="Attach image" aria-label="Attach image">
+                        <span class="material-symbols-outlined">add_photo_alternate</span>
+                    </button>
+                    <textarea id="prompt-input" rows="1" placeholder="Ask Nova anything..." aria-label="Message input"></textarea>
+                    <button id="send-btn" class="send-btn" disabled title="Send message" aria-label="Send message">
+                        <span class="send-icon material-symbols-outlined">arrow_upward</span>
+                        <span class="loading-icon material-symbols-outlined hidden">progress_activity</span>
+                    </button>
+                </div>
+
+                <p class="input-disclaimer">Nova can make mistakes. Double-check important info.</p>
+            </div>
+        </footer>
+
+        <!-- ── Toast Container ────────────────────────────────────── -->
+        <div id="toast-container"></div>
+
+        <!-- ── Confirm Dialog ─────────────────────────────────────── -->
+        <div id="confirm-overlay" class="hidden">
+            <div class="confirm-dialog">
+                <p id="confirm-message">Are you sure?</p>
+                <div class="confirm-actions">
+                    <button id="confirm-cancel" class="btn-secondary">Cancel</button>
+                    <button id="confirm-ok" class="btn-danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="markdown.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

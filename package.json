@@ -1,0 +1,19 @@
+{
+  "name": "nova-ai-chat",
+  "version": "2.0.0",
+  "description": "Nova — A premium AI chat experience powered by Gemini",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["ai", "chat", "gemini"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  }
+}
