@@ -29,8 +29,10 @@ A sleek, premium AI chat interface powered by **Google Gemini**. Nova delivers c
 
 ## 📸 Screenshots
 
-<!-- Add screenshots here after deploying -->
-<!-- ![Nova Chat](screenshots/nova-chat.png) -->
+<img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/ed4b0c69-b525-4e0c-bdde-5ac188ce5f26" />
+<img width="958" height="437" alt="image" src="https://github.com/user-attachments/assets/911b6a63-b793-4cc0-a1e6-30ded11a9f6f" />
+
+
 
 ---
 
